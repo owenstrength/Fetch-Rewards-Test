@@ -19,7 +19,14 @@ from collections import namedtuple
 def main():
 
     # command line arguments
-    points_to_spend, file_name = int(sys.argv[1]), sys.argv[2]
+    points_to_spend, file_name = sys.argv[1], sys.argv[2]
+
+    try:
+        points_to_spend = int(points_to_spend)
+    except:
+        print(f"Error: The input amount to spend must be of type Integer.",
+              file=sys.stderr)
+        exit()
 
     # using a named tuple for easier readability
     # Storing the tuples in transaction data
@@ -123,6 +130,8 @@ def main():
     # this exports our JSON file so we can easily access our data
     with open("output.json", "w") as outfile:
         outfile.write(json_object)
+
+    return json_object
 
 
 if __name__ == "__main__":
