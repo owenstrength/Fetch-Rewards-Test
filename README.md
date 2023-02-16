@@ -27,6 +27,8 @@ For example, to spend 5000 points, it would look like this:
 
     python3 main.py 5000 transactions.csv
 
+The results will be **returned** in the main function, **printed** to the terminal, and **stored** in `output.json`
+
 **The program will throw errors** 
  1. If the file name is invalid or does not exist.
  2. If the requested amount of points to spend is more than the points available. 
